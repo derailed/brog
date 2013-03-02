@@ -1,0 +1,14 @@
+<template name="postings">
+  <form id="post-form">
+    <div class="input-append">
+      <input type="text" class="span8" name="post-text" id="post-text" placeholder="Title, content">
+      <input class="btn btn-primary" type="submit" value="Post">
+    </div>
+  </form>
+  
+  <ul class='posts span8'>
+    {{#each posts}}
+      {{>post}}
+    {{/each}}
+  </ul>
+</template>

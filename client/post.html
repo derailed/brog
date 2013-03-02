@@ -1,0 +1,12 @@
+<template name="post">
+  <li>
+    <span class="title">{{title}}</span>
+    <span class="timestamp pull-right"><b>{{timestamp}}</b></span>    
+    <span class="content">{{content}}</span>
+    <ul class="comments">
+      {{#each comments}}
+        {{>comment}}
+      {{/each}}
+    </ul>
+  </li>  
+</template>
