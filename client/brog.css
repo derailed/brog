@@ -52,3 +52,7 @@ ul.comments > li {
   margin:     2px 0px;
   padding:    10px;
 }
+
+form#comment-form {
+  padding-left: 20px;
+}
