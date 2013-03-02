@@ -5,9 +5,10 @@ Template.post.helpers
 Template.post.events
   'click a.comment': (evt) ->
     evt.preventDefault()
-
-    comment = $('#comment-text').val()
-    console.log "Commenting on", this, comment    
-    Posts.update( {title: this.title},
-                  $push:{ comments: {content:comment, created_at:new Date()} } ) 
-    $('#comment-text').val( "" )    
+    
+    target  = $( ":input[data-id='#{this._id}']")
+    comment = target.val()
+    if comment and comment.length > 0
+      Posts.update( {title: this.title},
+                    $push:{ comments: {content:comment, created_at:new Date()} } )
+      target.val( "" )
